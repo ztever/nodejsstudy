@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>nodejs简介</title>
+</head>
+
+<body>
+  <h2>什么是nodejs</h2>
+  <p>nodejs不是一种语言，是JavaScript的一种runtime，运行在chrome v8引擎上</p>
+  <p>nodejs采用事件驱动（event-driven），none-blocking I/O model</p>
+  <p>阻塞I/O，I/O时，进程休眠，I/O完成后继续执行任务，而nodejs非阻塞，I/O操作未完成会继续执行任务，I/O结束后，通过事件驱动告诉主程序</p>
+  <p>cpu计算很快，相对于来说，I/O就比较慢，cpu在多进程之间来回切换，时间很短，人感受不到，因此，单核处理器也能执行多任务，开启任务后，会运行在内存里</p>
+  <h2>一、nodejs为什么擅长处理web场景？</h2>
+  <p>1.前端指责范围大，统一开发体验</p>
+  <p>2.处理高并发，I/O密集应用效果明显</p>
+  <h3>二、cup密集与I/O密集</h3>
+  <p>cpu密集---> 压缩,解压，加密，解密，（图形计算也是cpu密集，不过大多图形计算交给了GPU)</p>
+  <p>I/O密集---> 文件操作，网络操作，数据库操作</p>
+  <h2>三、web常见场景</h2>
+  <p>1、静态资源读取</p>
+  <p>2、数据库操作（也会有简单的cpu计算，比如说在那个盘）</p>
+  <p>3、渲染页面（也有cpu计算）</p>
+  <h2>进行与线程</h2>
+  <p>进程
+    进程（Process）是计算机中的程序关于某数据集合上的一次运行活动，是系统进行资源分配和调度的基本单位，是操作系统结构的基础。在早期面向进程设计的计算机结构中，进程是程序的基本执行实体；在当代面向线程设计的计算机结构中，进程是线程的容器。程序是指令、数据及其组织形式的描述，进程是程序的实体。
+  </p>
+  <p>线程 线程（英语：thread）是操作系统能够进行运算调度的最小单位。它被包含在进程之中，是进程中的实际运作单位。一条线程指的是进程中一个单一顺序的控制流，一个进程中可以并发多个线程，每条线程并行执行不同的任务。在Unix
+    System V及SunOS中也被称为轻量进程（lightweight processes），但轻量进程更多指内核线程（kernel thread），而把用户线程（user thread）称为线程。</p>
+  <h2>四、高并发解决办法</h2>
+  <img style="width: 600px;" src="../images/1576502008082.jpg" alt="" srcset="">
+  <p>nodejs单线程是针对主进程，而文件的读取是操作系统底层去做的，可以进行多线程调度，这部分操作与nodejs无关，通过event-drive</p>
+  <p>nodejs可以通过开启集群，来调用服务器的多个cpu</p>
+  <p>nodejs可以开启多进程</p>
+  <h3>应用场景</h3>
+  <p>web server</p>
+  <p>前端代码构建，类似webpack gulp</p>
+</body>
+
+</html>
